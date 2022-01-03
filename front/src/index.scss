@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;700;800;900&family=Licorice&display=swap');
+// Fonts :
+// font-family: 'Inter', sans-serif;
+// font-family: 'Licorice', cursive;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: #1D1D1D;
+}
+
+.navbar {
+  background: #181818;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 13vh;
+  position: fixed;
+  z-index: 100;
+  &__headBox {
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  &__headBoxLogo {
+    margin-bottom: .5rem;
+  }
+  &__headBoxTitle {
+    margin-bottom: 1rem;
+    font-size: 25px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+  }
+  &__headBoxSubTitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #757575;
+  }
+}
+
+.navbar-body {
+  text-align: center;
+  width : 100%;
+  height : 30%;
+  &__ul {
+    list-style: none;
+  }
+  &__li {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    border-bottom: 1px solid #757575;
+    color: #c4c3c3;
+    transition: all 300ms ease;
+    &:hover {
+      cursor: pointer;
+      color: #05FDD8 ;
+    }
+  }
+}
+
+#li-One {
+  border-top: 1px solid #757575;
+}
+
+.navbar-footer {
+  text-align: center;
+  height: 20%;
+  &__ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  &__li {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+// INDEX
+
+.index-divMaster {
+  background: #1D1D1D;
+  height: 100vh;
+  padding-left: 23vh;
+  padding-top: 5vh;
+  &__scrollSign {
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    color: #757575;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 9%;
+  }
+}
+
+#scrollSignLeft {
+  transform: rotate(90deg);
+  position: absolute;
+  bottom: 6%;
+  left: 4%;
+  animation: rightToLeft 1s infinite ease-in;
+}
+
+#scrollSignRight {
+  transform: rotate(90deg);
+  position: absolute;
+  bottom: 6%;
+  right: -3.7%;
+  animation: rightToLeft 1s infinite ease-in;
+}
+
+
+@keyframes rightToLeft {
+  0% {
+    bottom: 6%;
+  }
+  25% {
+    bottom: 7%;
+  }
+  50% {
+    bottom: 6%;
+  }
+  75% {
+    bottom: 5%;
+  }
+  100% {
+    bottom: 6%;
+  }
+}
+
+.index-header {
+  margin-top: 15rem;
+  &__title {
+    font-family: 'Inter', sans-serif;
+    font-size: 5rem;
+    color: #FFFFFF;
+  }
+  &__subtitle {
+    margin-top: 1.3rem;
+    font-size: 1.7rem;
+    font-family: 'Inter', sans-serif;
+    color: #757575;
+  }
+  &__box {
+    position: relative;
+  }
+  &__btn {
+    margin-top: 1.7rem;
+    width: 12rem;
+    height: 4rem;
+    border: 2px solid #05FDD8;
+    color: #05FDD8;
+    border-radius: 0;
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    transition: all 300ms ease;
+    position: absolute;
+    z-index: 1;
+    &:hover {
+      color: #181818;
+      cursor: pointer;
+      & + .index-header__btnDiv {
+        animation: loader 400ms ease-in;
+        transform-origin: left;
+        animation-fill-mode: forwards;
+        @keyframes loader {
+          0% {transform: scaleX(0%); opacity: 1;}      
+          100% {transform: scaleX(100%); opacity: 1;}
+    }
+      }
+    }
+  }
+  &__btnDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: #05FDD8;
+    height: 4rem;
+    width: 12rem;
+    position: absolute;
+    top: 1.8rem;
+    opacity: 0;
+    z-index: 0;
+  }
+}
+
+// portfolio 
+
+.index-portfolio {
+  background: #1D1D1D;
+  height: 100vh;
+  padding-left: 23vh;
+  padding-top: 15vh;
+  overflow: hidden;
+}
+
+.index-portfolioHeader {
+  &__title {
+    font-family: 'Inter', sans-serif;
+    font-size: 4.3rem;
+    color: #FFFFFF;
+  }
+  &__subtitle {
+    margin-top: 1.3rem;
+    font-size: 1.7rem;
+    font-family: 'Inter', sans-serif;
+    color: #FFFFFF;
+  }
+}
+
+.index-portfolioBody {
+  width: 111.2%;
+  height: auto;
+  margin-left:-9.8vh;
+  margin-top: 2rem;
+  background: #000;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  &__projets {
+    width: 19%;
+    height: 16rem;
+    background: rgb(102, 81, 81);
+  }
+}
+
+// myself
+
+.index-myself {
+  background: #1D1D1D;
+  height: 90vh;
+  padding-left: 23vh;
+  overflow: hidden;
+  position: relative;
+  &__title {
+    font-family: 'Inter', sans-serif;
+    font-size: 4rem;
+    color: #FFFFFF;
+  }
+  &__subtitle {
+    margin-top: 1.3rem;
+    font-size: 1.2rem;
+    font-family: 'Inter', sans-serif;
+    color: #FFFFFF;
+  }
+  &__boxTechnos {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+    background: transparent;
+  }
+  &__technos {
+    &:hover {
+      transform: scale(1.3);
+      transition: all 200ms ease-in-out;
+    }
+  }
+}
+
+.index-divMyself {
+  &__divScroll {
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    color: #757575;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 9%;
+  }
+}
+
+#scrollSignLeftTwo {
+  transform: rotate(90deg);
+  position: absolute;
+  left: 10vh;
+  margin-bottom: 11rem;
+  animation: rightToLeft 1s infinite ease-in;
+}
+
+#scrollSignRightTwo {
+  transform: rotate(90deg);
+  position: absolute;
+  right: -2%;
+  margin-bottom: 11rem;
+  animation: rightToLeft 1s infinite ease-in;
+}
+// formContacts
+
+.index-contact {
+  background: #1D1D1D;
+  height: 90vh;
+  padding-left: 23vh;
+  overflow: hidden;
+  &__headertitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 4rem;
+    color: #FFFFFF;
+  }
+  &__headersubtitle {
+    margin-top: 1.3rem;
+    font-size: 1.4rem;
+    font-family: 'Inter', sans-serif;
+    color: #FFFFFF;
+    margin-bottom: 2.2rem;
+  }
+}
+
+.formContact {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 60%;
+  height: auto;
+  background: #1D1D1D;
+  &__box {
+    position: relative;
+  }
+  &__label {
+    width: auto;
+    height: auto;
+  }
+  &__input {
+    width: 988px;
+    height: 2.6rem;
+    margin-bottom: 1rem;
+    border: none;
+    background: #2B2B2B;
+    color: #757575;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    padding-left: 1rem;
+    &::placeholder {
+      color: #757575;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+    &:focus {
+      & + .formContact__valid {
+        animation: loader 400ms ease-in;
+        transform-origin: left;
+        animation-fill-mode: forwards;
+        @keyframes loader {
+          0% {transform: scaleX(0%); opacity: 1;}      
+          100% {transform: scaleX(100%); opacity: 1;}
+    } 
+      }
+    }
+  }
+  &__textarea {
+    width: 988px;
+    height: 10rem;
+    margin-bottom: 1rem;
+    border: none;
+    background: #2B2B2B;
+    color: #757575;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    outline: none;
+    resize: vertical;
+    &::placeholder {
+      color: #757575;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+    &:focus {
+      & + .formContact__valid {
+        animation: loader 400ms ease-in;
+        transform-origin: left;
+        animation-fill-mode: forwards;
+        @keyframes loader {
+          0% {transform: scaleX(0%); opacity: 1;}      
+          100% {transform: scaleX(100%); opacity: 1;}
+    } 
+      }
+    }
+  }
+  &__div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: relative;
+  }
+  &__btn {
+    width: 30%;
+    height: 4rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent ;
+    border: #05FDD8 1px solid;
+    color: #05FDD8;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    position: absolute;
+    z-index: 1;
+    right: 0%;
+    &:hover {
+      color: #1D1D1D;
+      & + .formContact__divBtn {
+        animation: loader 200ms ease-in;
+        transform-origin: left;
+        animation-fill-mode: forwards;
+        @keyframes loader {
+          0% {transform: scaleX(0%); opacity: 1;}      
+          100% {transform: scaleX(100%); opacity: 1;}
+    }
+      }
+    }
+  }
+  &__divBtn {
+    width: 30%;
+    height: 4rem;
+    background: #05FDD8;
+    position: absolute;
+    opacity: 0;
+    right: 0%;
+  }
+  &__valid {
+    width: 100%;
+    height: 5px;
+    background: #05FDD8;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: 22%;
+    opacity: 0;
+  }
+  &__validAlt {
+    width: 390px;
+  }
+}
+
+#nom, #eMail {
+  width: 480px;
+}
+
+#formContact__valid {
+  bottom: 7%;
+}
