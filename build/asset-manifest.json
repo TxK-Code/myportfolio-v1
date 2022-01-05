@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b78b93f5.css",
+    "main.js": "/static/js/main.2d40d61b.js",
+    "static/media/sass-brands.svg": "/static/media/sass-brands.7fdcb51347ed1261ffa67ebe26a9fb13.svg",
+    "static/media/react-brands.svg": "/static/media/react-brands.4e0327c4c74e8fc38fa9a1e0622da9fa.svg",
+    "static/media/github-square-brands.svg": "/static/media/github-square-brands.3b606d08589ad88c6e8bf2646204a997.svg",
+    "static/media/github-square-brands_hover.svg": "/static/media/github-square-brands_hover.34c1ccac82d4e83d807e010ded49c785.svg",
+    "static/media/js-square-brands.svg": "/static/media/js-square-brands.417c53f9ca704196d5e3581a412f0c7a.svg",
+    "index.html": "/index.html",
+    "static/media/linkedin-in-brands.svg": "/static/media/linkedin-in-brands.6a5febbefd8dbc1ad189dba34265c9b9.svg",
+    "static/media/linkedin-in-brands_hover.svg": "/static/media/linkedin-in-brands_hover.0a0988064566268b37df2a119c2c31d6.svg",
+    "static/media/html5-brands.svg": "/static/media/html5-brands.9246d16c8d83819a2b8c6da9a050b6a8.svg",
+    "main.b78b93f5.css.map": "/static/css/main.b78b93f5.css.map",
+    "main.2d40d61b.js.map": "/static/js/main.2d40d61b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b78b93f5.css",
+    "static/js/main.2d40d61b.js"
+  ]
+}
