@@ -66,6 +66,7 @@ export default function Indexmyself() {
           </span>
         </div>
       </div>
+      <div id="contactMe"></div>
     </>
   );
 }

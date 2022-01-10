@@ -24,6 +24,7 @@ export default function IndexProjects() {
           <div className="index-portfolioBody__projets"></div>
           <div className="index-portfolioBody__projets"></div>
         </div>
+        <div id="skills"></div>
       </div>
     </>
   );

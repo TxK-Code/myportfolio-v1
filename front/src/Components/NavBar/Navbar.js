@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { HashLink } from "react-router-hash-link";
 
 //Images
 import TLogo from "../../Images/t-redBlue.png";
@@ -14,25 +15,39 @@ export default function Navbar() {
     <>
       <div className="navbar">
         <div className="navbar__headBox">
-          <img
-            src={TLogo}
-            alt="Logo"
-            width="53"
-            height="72"
-            className="navbar__headBoxLogo"
-          />
+          <HashLink smooth to="#hello">
+            <img
+              src={TLogo}
+              alt="Logo"
+              width="53"
+              height="72"
+              className="navbar__headBoxLogo"
+            />
+          </HashLink>
           <span className="navbar__headBoxTitle">Thomas</span>
           <span className="navbar__headBoxSubTitle">Web Developer</span>
         </div>
         <div className="navbar-body">
           <ul className="navbar-body__ul">
             <li className="navbar-body__li" id="li-One">
-              À propos
+              <HashLink smooth to="#hello">
+                Hello
+              </HashLink>
             </li>
-            <li className="navbar-body__li">Skills</li>
-            <li className="navbar-body__li">Projets</li>
+            <li className="navbar-body__li">
+              <HashLink smooth to="#myprojets">
+                Projets
+              </HashLink>
+            </li>
+            <li className="navbar-body__li">
+              <HashLink smooth to="#skills">
+                Skills
+              </HashLink>
+            </li>
             <li className="navbar-body__li" id="li-Last">
-              Contact
+              <HashLink smooth to="#contactMe">
+                Contact
+              </HashLink>
             </li>
           </ul>
         </div>

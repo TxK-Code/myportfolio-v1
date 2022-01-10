@@ -5,6 +5,7 @@ import Tlogo from "../../Images/t-redBlue.png";
 export default function IndexHeader() {
   return (
     <>
+      <div id="hello"></div>
       <div className="index-divMaster">
         <div className="index-header">
           <h1 className="index-header__title">
@@ -29,6 +30,7 @@ export default function IndexHeader() {
           </span>
         </div>
       </div>
+      <div id="myprojets"></div>
     </>
   );
 }

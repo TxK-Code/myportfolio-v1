@@ -12,6 +12,15 @@ html {
   background: #1D1D1D;
 }
 
+a {
+  text-decoration: none;
+  color: #757575;
+  &:hover {
+    cursor: pointer;
+    color: #05FDD8 ;
+  }
+}
+
 .navbar {
   background: #181818;
   color: #FFFFFF;
@@ -63,10 +72,6 @@ html {
     border-bottom: 1px solid #757575;
     color: #c4c3c3;
     transition: all 300ms ease;
-    &:hover {
-      cursor: pointer;
-      color: #05FDD8 ;
-    }
   }
 }
 
