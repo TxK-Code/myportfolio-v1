@@ -32,6 +32,19 @@ a {
   width: 13vh;
   position: fixed;
   z-index: 100;
+  @media screen and (max-width: 375px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: 5rem;
+    width: 375px;
+    overflow: hidden;
+    background: #181818;
+    border-bottom: 2px solid #757575;
+    position: fixed;
+    top: 0;
+  }
   &__headBox {
     background: #000;
     display: flex;
@@ -39,20 +52,42 @@ a {
     align-items: center;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+    @media screen and (max-width: 375px) {
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+      width: 15%;
+      padding: 0;
+    }
   }
   &__headBoxLogo {
     margin-bottom: .5rem;
+    height: 36px;
+    width: 26.5px;
+    margin: auto;
+    @media screen and (max-width: 375px) {
+      width: 30px;
+      height: auto;
+      margin: 0;
+      padding-left: 1rem;
+    }
   }
   &__headBoxTitle {
     margin-bottom: 1rem;
     font-size: 25px;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
+    @media screen and (max-width: 375px) {
+      display: none; 
+    }
   }
   &__headBoxSubTitle {
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     color: #757575;
+    @media screen and (max-width: 375px) {
+      display: none; 
+    }
   }
 }
 
@@ -60,8 +95,24 @@ a {
   text-align: center;
   width : 100%;
   height : 30%;
+  @media screen and (max-width: 375px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 75%;
+    height: 20%;   
+  }
   &__ul {
     list-style: none;
+    @media screen and (max-width: 375px) {
+     width: 100%;
+     heigh: auto;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     align-items: center;
+     border: none;
+    }
   }
   &__li {
     font-family: 'Inter', sans-serif;
@@ -72,16 +123,31 @@ a {
     border-bottom: 1px solid #757575;
     color: #c4c3c3;
     transition: all 300ms ease;
+    @media screen and (max-width: 375px) {
+      height: 100%;
+      margin-top: 10%;
+      display: flex;
+      align-items: center;
+      border: none;
+      font-weight: 500;
+      padding: 0;
+    }
   }
 }
 
 #li-One {
   border-top: 1px solid #757575;
+  @media screen and (max-width: 375px) {
+    border: none;
+  }
 }
 
 .navbar-footer {
   text-align: center;
   height: 20%;
+  @media screen and (max-width: 375px) {
+    display: none;
+  }
   &__ul {
     display: flex;
     flex-direction: row;
@@ -105,6 +171,9 @@ a {
   height: 100vh;
   padding-left: 23vh;
   padding-top: 5vh;
+  @media screen and (max-width: 375px) {
+    padding: 0;
+  }
   &__scrollSign {
     font-family: 'Inter', sans-serif;
     text-align: center;
@@ -122,6 +191,9 @@ a {
   bottom: 6%;
   left: 4%;
   animation: rightToLeft 1s infinite ease-in;
+  @media screen and (max-width: 375px) {
+    display: none;
+  }
 }
 
 #scrollSignRight {
@@ -130,6 +202,9 @@ a {
   bottom: 6%;
   right: -3.7%;
   animation: rightToLeft 1s infinite ease-in;
+  @media screen and (max-width: 375px) {
+    display: none;
+  }
 }
 
 
@@ -153,19 +228,43 @@ a {
 
 .index-header {
   margin-top: 15rem;
+  @media screen and (max-width: 375px){
+    margin-top: 10rem;
+    width: 100%;
+  }
   &__title {
     font-family: 'Inter', sans-serif;
     font-size: 5rem;
     color: #FFFFFF;
+    height: 100%;
+    width: 100%;
+    @media screen and (max-width: 375px){
+      margin-left: 13px;
+      margin-bottom: 5rem;
+      font-size: 2.4rem;
+    }
+  }
+  &__img {
+    @media  screen and (max-width: 375px){
+      width: 26.5px;
+      height: 36px;
+    }
   }
   &__subtitle {
     margin-top: 1.3rem;
     font-size: 1.7rem;
     font-family: 'Inter', sans-serif;
     color: #757575;
+    @media screen and (max-width: 375px) {
+      margin-left: 13px;
+      padding-bottom: 3rem;
+    }
   }
   &__box {
     position: relative;
+    @media screen and (max-width: 375px) {
+      margin-left: 25%;
+    }
   }
   &__btn {
     margin-top: 1.7rem;
@@ -470,3 +569,6 @@ a {
 #formContact__valid {
   bottom: 7%;
 }
+
+// test bounce effect
+

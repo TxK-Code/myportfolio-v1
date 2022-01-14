@@ -10,7 +10,14 @@ export default function IndexHeader() {
         <div className="index-header">
           <h1 className="index-header__title">
             Hello, <br />
-            Moi c'est <img src={Tlogo} alt="Logo" width="53" height="72" />
+            Moi c'est{" "}
+            <img
+              src={Tlogo}
+              alt="Logo"
+              width="53"
+              height="72"
+              className="index-header__img"
+            />
             homas.
             <br />
             Je suis Web Developer.{" "}
