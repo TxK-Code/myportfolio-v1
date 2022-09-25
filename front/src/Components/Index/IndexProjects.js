@@ -9,7 +9,7 @@ export default function IndexProjects() {
           <p className="index-portfolioHeader__subtitle">
             Une petite liste de mes projets récents,
             <br />
-            alimentée par mes essais et mes idées et qui grandira vite ! :)
+            alimentée par mes essais et mes idées et qui grandira vite ! :
           </p>
         </div>
         <div className="index-portfolioBody">
