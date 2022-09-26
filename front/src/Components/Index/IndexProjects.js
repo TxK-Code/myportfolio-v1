@@ -1,6 +1,13 @@
 import React from "react";
 
 export default function IndexProjects() {
+  const newTabTest = () => {
+    window.open("https://github.com/TxK-Code/wcs-quest");
+  };
+  const newTabPizza = () => {
+    window.open("https://github.com/TxK-Code/pizzeria");
+  };
+
   return (
     <>
       <div className="index-portfolio">
@@ -13,16 +20,24 @@ export default function IndexProjects() {
           </p>
         </div>
         <div className="index-portfolioBody">
-          <div className="index-portfolioBody__projets"></div>
-          <div className="index-portfolioBody__projets"></div>
-          <div className="index-portfolioBody__projets"></div>
-          <div className="index-portfolioBody__projets"></div>
-          <div className="index-portfolioBody__projets"></div>
-          <div className="index-portfolioBody__projets"></div>
-          <div className="index-portfolioBody__projets"></div>
-          <div className="index-portfolioBody__projets"></div>
-          <div className="index-portfolioBody__projets"></div>
-          <div className="index-portfolioBody__projets"></div>
+          <div className="index-portfolioBody__projets">
+            <div className="index-portfolioBody__projetsBox" id="task01">
+              <p
+                className="index-portfolioBody__projetsButton"
+                onClick={newTabTest}
+              >
+                Test Technique WCS
+              </p>
+            </div>
+            <div className="index-portfolioBody__projetsBox" id="task02">
+              <p
+                className="index-portfolioBody__projetsButton"
+                onClick={newTabPizza}
+              >
+                Pizzeria
+              </p>
+            </div>
+          </div>
         </div>
         <div id="skills"></div>
       </div>
