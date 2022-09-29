@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useRef } from "react";
 
 export default function IndexProjects() {
+  const form = useRef();
+
   const newTabTest = () => {
     window.open("https://github.com/TxK-Code/wcs-quest");
   };
   const newTabPizza = () => {
     window.open("https://github.com/TxK-Code/pizzeria");
+  };
+  const newTabMtg = () => {
+    window.open("https://github.com/TxK-Code/mtxCards_code");
+  };
+  const newTabOC = () => {
+    window.open("https://github.com/TxK-Code/ThomasMaugendre_7_16092021");
+  };
+
+  const sendMail = (e) => {
+    e.preventDefault();
   };
 
   return (
@@ -21,21 +33,26 @@ export default function IndexProjects() {
         </div>
         <div className="index-portfolioBody">
           <div className="index-portfolioBody__projets">
-            <div className="index-portfolioBody__projetsBox" id="task01">
-              <p
-                className="index-portfolioBody__projetsButton"
-                onClick={newTabTest}
-              >
-                Test Technique WCS
-              </p>
+            <div className="btnProjekt" onClick={newTabTest}>
+              <button className="btnProjekt__btn">Test Technique WCS</button>
+              <div className="btnProjekt__btnDiv"></div>
             </div>
-            <div className="index-portfolioBody__projetsBox" id="task02">
-              <p
-                className="index-portfolioBody__projetsButton"
-                onClick={newTabPizza}
-              >
-                Pizzeria
-              </p>
+
+            <div className="btnProjekt" onClick={newTabPizza}>
+              <button className="btnProjekt__btn">Pizzeria</button>
+              <div className="btnProjekt__btnDiv"></div>
+            </div>
+
+            <div className="btnProjekt" onClick={newTabMtg}>
+              <button className="btnProjekt__btn">Card Manager</button>
+              <div className="btnProjekt__btnDiv"></div>
+            </div>
+
+            <div className="btnProjekt" onClick={newTabOC}>
+              <button className="btnProjekt__btn">
+                Projet Final OpenClassrooms
+              </button>
+              <div className="btnProjekt__btnDiv"></div>
             </div>
           </div>
         </div>

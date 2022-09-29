@@ -1,4 +1,5 @@
 import React from "react";
+import { HashLink } from "react-router-hash-link";
 
 import Tlogo from "../../Images/t-redBlue.png";
 
@@ -24,7 +25,9 @@ export default function IndexHeader() {
           </h1>
           <p className="index-header__subtitle">Dev Front-End__</p>
           <div className="index-header__box">
-            <button className="index-header__btn">Contactez-moi</button>
+            <HashLink smooth to="#contactMe">
+              <button className="index-header__btn">Contactez-moi</button>
+            </HashLink>
             <div className="index-header__btnDiv"></div>
           </div>
         </div>
