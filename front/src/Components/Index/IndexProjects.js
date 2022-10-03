@@ -1,8 +1,6 @@
 import React, { useRef } from "react";
 
 export default function IndexProjects() {
-  const form = useRef();
-
   const newTabTest = () => {
     window.open("https://github.com/TxK-Code/wcs-quest");
   };
@@ -16,24 +14,19 @@ export default function IndexProjects() {
     window.open("https://github.com/TxK-Code/ThomasMaugendre_7_16092021");
   };
 
-  const sendMail = (e) => {
-    e.preventDefault();
-  };
-
   return (
     <>
       <div className="index-portfolio">
         <div className="index-portfolioHeader">
           <h1 className="index-portfolioHeader__title">Mes Projets</h1>
           <p className="index-portfolioHeader__subtitle">
-            Une petite liste de mes projets récents,
-            <br />
-            alimentée par mes essais et mes idées et qui grandira vite ! :
+            Une petite liste de mes projets récents, alimentée par mes essais et
+            mes idées et qui grandira vite !
           </p>
         </div>
         <div className="index-portfolioBody">
           <div className="index-portfolioBody__projets">
-            <div className="btnProjekt" onClick={newTabTest}>
+            <div className="btnProjekt" id="firstBtnPrj" onClick={newTabTest}>
               <button className="btnProjekt__btn">Test Technique WCS</button>
               <div className="btnProjekt__btnDiv"></div>
             </div>

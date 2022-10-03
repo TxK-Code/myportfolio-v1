@@ -32,18 +32,21 @@ a {
   width: 13vh;
   position: fixed;
   z-index: 100;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 415px) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
     height: 5rem;
-    width: 375px;
+    width: 100%;
     overflow: hidden;
     background: #181818;
     border-bottom: 2px solid #757575;
+    border-top: 2px solid #757575;
     position: fixed;
     top: 0;
+    left: 0;
+    margin-top: 1rem;
   }
   &__headBox {
     background: #000;
@@ -52,7 +55,7 @@ a {
     align-items: center;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 415px) {
       display: flex;
       flex-direction: row;
       align-content: center;
@@ -65,7 +68,7 @@ a {
     height: 36px;
     width: 26.5px;
     margin: auto;
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 415px) {
       width: 30px;
       height: auto;
       margin: 0;
@@ -77,7 +80,7 @@ a {
     font-size: 25px;
     font-family: "Inter", sans-serif;
     font-weight: 700;
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 415px) {
       display: none;
     }
   }
@@ -85,7 +88,7 @@ a {
     font-family: "Inter", sans-serif;
     font-size: 14px;
     color: #757575;
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 415px) {
       display: none;
     }
   }
@@ -95,7 +98,7 @@ a {
   text-align: center;
   width: 100%;
   height: 30%;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 415px) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -104,7 +107,7 @@ a {
   }
   &__ul {
     list-style: none;
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 415px) {
       width: 100%;
       heigh: auto;
       display: flex;
@@ -123,7 +126,7 @@ a {
     border-bottom: 1px solid #757575;
     color: #c4c3c3;
     transition: all 300ms ease;
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 415px) {
       height: 100%;
       margin-top: 10%;
       display: flex;
@@ -137,7 +140,7 @@ a {
 
 #li-One {
   border-top: 1px solid #757575;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 415px) {
     border: none;
   }
 }
@@ -145,7 +148,7 @@ a {
 .navbar-footer {
   text-align: center;
   height: 20%;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 415px) {
     display: none;
   }
   &__ul {
@@ -171,8 +174,10 @@ a {
   height: 100vh;
   padding-left: 23vh;
   padding-top: 5vh;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 415px) {
     padding: 0;
+    height: auto;
+    padding-top: 6rem;
   }
   &__scrollSign {
     font-family: "Inter", sans-serif;
@@ -191,7 +196,7 @@ a {
   bottom: 6%;
   left: 4%;
   animation: rightToLeft 1s infinite ease-in;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 415px) {
     display: none;
   }
 }
@@ -202,7 +207,7 @@ a {
   bottom: 6%;
   right: -3.7%;
   animation: rightToLeft 1s infinite ease-in;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 415px) {
     display: none;
   }
 }
@@ -227,9 +232,11 @@ a {
 
 .index-header {
   margin-top: 15rem;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 415px) {
     margin-top: 10rem;
+    margin-bottom: 16rem;
     width: 100%;
+    text-align: center;
   }
   &__title {
     font-family: "Inter", sans-serif;
@@ -237,14 +244,13 @@ a {
     color: #ffffff;
     height: 100%;
     width: 100%;
-    @media screen and (max-width: 375px) {
-      margin-left: 13px;
+    @media screen and (max-width: 415px) {
       margin-bottom: 5rem;
       font-size: 2.4rem;
     }
   }
   &__img {
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 415px) {
       width: 26.5px;
       height: 36px;
     }
@@ -254,15 +260,14 @@ a {
     font-size: 1.7rem;
     font-family: "Inter", sans-serif;
     color: #757575;
-    @media screen and (max-width: 375px) {
-      margin-left: 13px;
+    @media screen and (max-width: 415px) {
       padding-bottom: 3rem;
     }
   }
   &__box {
     position: relative;
-    @media screen and (max-width: 375px) {
-      margin-left: 25%;
+    @media screen and (max-width: 415px) {
+      margin-left: 0%;
     }
   }
   &__btn {
@@ -278,6 +283,9 @@ a {
     transition: all 300ms ease;
     position: absolute;
     z-index: 1;
+    @media screen and (max-width: 415px) {
+      left: 27%;
+    }
     &:hover {
       color: #181818;
       cursor: pointer;
@@ -321,6 +329,11 @@ a {
   padding-left: 23vh;
   padding-top: 15vh;
   overflow: hidden;
+  @media screen and (max-width: 415px) {
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 75vh;
+  }
 }
 
 .index-portfolioHeader {
@@ -328,12 +341,20 @@ a {
     font-family: "Inter", sans-serif;
     font-size: 4.3rem;
     color: #ffffff;
+    @media screen and (max-width: 415px) {
+      font-size: 3rem;
+      text-align: center;
+    }
   }
   &__subtitle {
     margin-top: 1.3rem;
     font-size: 1.7rem;
     font-family: "Inter", sans-serif;
     color: #ffffff;
+    @media screen and (max-width: 415px) {
+      font-size: 1.4rem;
+      text-align: center;
+    }
   }
 }
 
@@ -347,6 +368,12 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  @media screen and (max-width: 415px) {
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
   &__projets {
     display: flex;
     flex-wrap: wrap;
@@ -354,6 +381,14 @@ a {
     width: 100%;
     height: 15rem;
     margin-bottom: 1rem;
+    @media screen and (max-width: 415px) {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      height: auto;
+    }
   }
   &__projetsBox {
     display: flex;
@@ -394,6 +429,9 @@ a {
   justify-content: center;
   height: auto;
   width: 30%;
+  @media screen and (max-width: 415px) {
+    margin-top: 6rem;
+  }
   &__btn {
     margin-top: 1.7rem;
     width: 17rem;
@@ -443,6 +481,10 @@ a {
   }
 }
 
+#firstBtnPrj {
+  margin-top: 0;
+}
+
 #task01 {
   background: #05fdd8;
 }
@@ -452,16 +494,32 @@ a {
 
 // myself
 
+#skills {
+  margin-top: 6rem;
+}
+
 .index-myself {
   background: #1d1d1d;
   height: 90vh;
   padding-left: 23vh;
   overflow: hidden;
   position: relative;
+  @media screen and (max-width: 415px) {
+    padding-left: 0;
+    width: 95%;
+    margin: auto;
+    text-align: left;
+    margin-top: 6rem;
+  }
   &__title {
     font-family: "Inter", sans-serif;
     font-size: 4rem;
     color: #ffffff;
+    @media screen and (max-width: 415px) {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1.6rem;
+    }
   }
   &__subtitle {
     margin-top: 1.3rem;
@@ -476,11 +534,22 @@ a {
     justify-content: space-between;
     width: 40%;
     background: transparent;
+    @media screen and (max-width: 415px) {
+      width: 100%;
+      flex-wrap: wrap;
+    }
   }
   &__technos {
     &:hover {
       transform: scale(1.3);
       transition: all 200ms ease-in-out;
+      @media screen and (max-width: 415px) {
+        transform: scale(0.7);
+        transition: none;
+      }
+    }
+    @media screen and (max-width: 415px) {
+      transform: scale(0.7);
     }
   }
 }
@@ -494,6 +563,9 @@ a {
     flex-direction: column;
     justify-content: space-between;
     width: 9%;
+    @media screen and (max-width: 415px) {
+      display: none;
+    }
   }
 }
 
@@ -519,10 +591,20 @@ a {
   height: 90vh;
   padding-left: 23vh;
   overflow: hidden;
+  @media screen and (max-width: 415px) {
+    padding-left: 0;
+    width: 95%;
+    margin: auto;
+    text-align: center;
+  }
   &__headertitle {
     font-family: "Inter", sans-serif;
     font-size: 4rem;
     color: #ffffff;
+    @media screen and (max-width: 415px) {
+      font-size: 3rem;
+      margin-top: 4rem;
+    }
   }
   &__headersubtitle {
     margin-top: 1.3rem;
@@ -541,12 +623,24 @@ a {
   width: 60%;
   height: auto;
   background: #1d1d1d;
+  @media screen and (max-width: 415px) {
+    width: 90%;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+  }
   &__box {
     position: relative;
+    @media screen and (max-width: 415px) {
+      width: 100%;
+    }
   }
   &__label {
     width: auto;
     height: auto;
+    @media screen and (max-width: 415px) {
+      width: 100%;
+    }
   }
   &__input {
     width: 988px;
@@ -559,6 +653,11 @@ a {
     font-family: "Inter", sans-serif;
     outline: none;
     padding-left: 1rem;
+    @media screen and (max-width: 415px) {
+      width: 100%;
+      padding-left: 5px;
+      box-sizing: border-box;
+    }
     &::placeholder {
       color: #757575;
       font-size: 1rem;
@@ -595,6 +694,11 @@ a {
     padding-top: 1rem;
     outline: none;
     resize: vertical;
+    @media screen and (max-width: 415px) {
+      width: 100%;
+      padding-left: 5px;
+      box-sizing: border-box;
+    }
     &::placeholder {
       color: #757575;
       font-size: 1rem;
@@ -640,6 +744,9 @@ a {
     position: absolute;
     z-index: 2;
     right: 0%;
+    @media screen and (max-width: 415px) {
+      position: relative;
+    }
     &:hover {
       color: #1d1d1d;
       & + .formContact__divBtn {
@@ -677,15 +784,24 @@ a {
     position: absolute;
     bottom: 22%;
     opacity: 0;
+    @media screen and (max-width: 415px) {
+      width: 100%;
+    }
   }
   &__validAlt {
     width: 390px;
+    @media screen and (max-width: 415px) {
+      width: 100%;
+    }
   }
 }
 
 #nom,
 #eMail {
   width: 480px;
+  @media screen and (max-width: 415px) {
+    width: 100%;
+  }
 }
 
 #formContact__valid {

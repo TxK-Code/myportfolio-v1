@@ -4,10 +4,13 @@ import JsLogo from "../../Images/.svg/js-square-brands.svg";
 import SassLogo from "../../Images/.svg/sass-brands.svg";
 import ReactLogo from "../../Images/.svg/react-brands.svg";
 import HtmlLogo from "../../Images/.svg/html5-brands.svg";
+import mySqlLogo from "../../Images/.svg/mySql.svg";
 
 export default function Indexmyself() {
   return (
     <>
+      <div id="skills"></div>
+
       <div className="index-myself">
         <h1 className="index-myself__title">Viens on parle de moi</h1>
         <p className="index-myself__subtitle">
@@ -51,6 +54,13 @@ export default function Indexmyself() {
           />
           <img
             src={ReactLogo}
+            alt="Logo React"
+            width="100px"
+            height="100px"
+            className="index-myself__technos"
+          />
+          <img
+            src={mySqlLogo}
             alt="Logo React"
             width="100px"
             height="100px"
