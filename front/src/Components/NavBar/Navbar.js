@@ -11,6 +11,13 @@ import GitHubLogoHover from "../../Images/.svg/github-square-brands_hover.svg";
 import "../../index.scss";
 
 export default function Navbar() {
+  const newLink = () => {
+    window.open("https://www.linkedin.com/in/thomas-maugendre-5a04ab209/");
+  };
+  const newGit = () => {
+    window.open("https://github.com/TxK-Code");
+  };
+
   return (
     <>
       <div className="navbar">
@@ -60,6 +67,7 @@ export default function Navbar() {
                   (e.currentTarget.src = `${GitHubLogoHover}`)
                 }
                 onMouseOut={(e) => (e.currentTarget.src = `${GitHubLogo}`)}
+                onClick={newGit}
                 alt="Lien Github"
                 height="25"
                 width="25"
@@ -73,6 +81,7 @@ export default function Navbar() {
                   (e.currentTarget.src = `${LinkedinLogoHover}`)
                 }
                 onMouseOut={(e) => (e.currentTarget.src = `${LinkedinLogo}`)}
+                onClick={newLink}
                 alt="Lien Linkedin"
                 height="25"
                 width="25"
