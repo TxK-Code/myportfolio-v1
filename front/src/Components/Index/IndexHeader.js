@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { HashLink } from "react-router-hash-link";
 
 import Tlogo from "../../Images/t-redBlue.png";
 
 export default function IndexHeader() {
   // Light Mode
+  const [displayMode, setDisplayMode] = useState(true);
+  const saveStateToLS = () => {
+    localStorage.setItem("DisplayMode : ", displayMode);
+  };
+  const saveDisplayMode = () => {
+    setDisplayMode(!displayMode);
+    saveStateToLS();
+    console.log(displayMode);
+  };
   const whatIsSL = localStorage.getItem("DisplayMode : ");
+  if (whatIsSL === null) {
+    localStorage.setItem("DisplayMode : ", true);
+    setDisplayMode(true);
+  }
 
   return (
     <>
@@ -76,6 +89,16 @@ export default function IndexHeader() {
             ></div>
           </div>
         </div>
+        <button
+          className={
+            whatIsSL === "false"
+              ? "index-divMasterW__SecBtn"
+              : "index-divMaster__SecBtn"
+          }
+          onClick={saveDisplayMode}
+        >
+          {whatIsSL === "false" ? "Light Off" : "Light On"}
+        </button>
         <div
           className={
             whatIsSL === "false"
