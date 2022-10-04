@@ -9,15 +9,40 @@ import Indexmyself from "../Components/Index/Indexmyself";
 import FormContact from "../Components/Formulaire/ContactForm";
 
 export default function Index() {
+  // Light Mode
+  const whatIsSL = localStorage.getItem("DisplayMode : ");
+
   return (
     <>
       <IndexHeader />
       <IndexProjects />
       <Indexmyself />
-      <div className="index-contact">
-        <div className="index-contact__header">
-          <h1 className="index-contact__headertitle">Contactez-moi</h1>
-          <p className="index-contact__headersubtitle">
+      <div
+        className={whatIsSL === "false" ? "index-contactW" : "index-contact"}
+      >
+        <div
+          className={
+            whatIsSL === "false"
+              ? "index-contactW__header"
+              : "index-contact__header"
+          }
+        >
+          <h1
+            className={
+              whatIsSL === "false"
+                ? "index-contactW__headertitle"
+                : "index-contact__headertitle"
+            }
+          >
+            Contactez-moi
+          </h1>
+          <p
+            className={
+              whatIsSL === "false"
+                ? "index-contactW__headersubtitle"
+                : "index-contact__headersubtitle"
+            }
+          >
             Une idée de projet ? Envie qu'on bosse ensemble ?<br />
             Je suis disponible et prêt pour une nouvelle aventure !
           </p>

@@ -39,58 +39,162 @@ export default function ContactForm() {
     setTimeout(okNext, 1500);
   };
 
+  // Light Mode
+  const whatIsSL = localStorage.getItem("DisplayMode : ");
+
   return (
     <>
-      <form ref={form} action="" className="formContact" onSubmit={sendMail}>
-        <div className="formContact__box">
-          <label htmlFor="nom" className="formContact__label"></label>
+      <form
+        ref={form}
+        action=""
+        className={whatIsSL === "false" ? "formContactW" : "formContact"}
+        onSubmit={sendMail}
+      >
+        <div
+          className={
+            whatIsSL === "false" ? "formContactW__box" : "formContact__box"
+          }
+        >
+          <label
+            htmlFor="nom"
+            className={
+              whatIsSL === "false"
+                ? "formContactW__label"
+                : "formContact__label"
+            }
+          ></label>
           <input
             type="text"
             id="nom"
-            className="formContact__input"
+            className={
+              whatIsSL === "false"
+                ? "formContactW__input"
+                : "formContact__input"
+            }
             placeholder="Nom"
             name="userName"
           />
-          <span className="formContact__valid"></span>
+          <span
+            className={
+              whatIsSL === "false" ? "formContact__valid" : "formContact__valid"
+            }
+          ></span>
         </div>
-        <div className="formContact__box">
-          <label htmlFor="eMail" className="formContact__label"></label>
+        <div
+          className={
+            whatIsSL === "false" ? "formContactW__box" : "formContact__box"
+          }
+        >
+          <label
+            htmlFor="eMail"
+            className={
+              whatIsSL === "false"
+                ? "formContactW__label"
+                : "formContact__label"
+            }
+          ></label>
           <input
             type="text"
             id="eMail"
-            className="formContact__input"
+            className={
+              whatIsSL === "false"
+                ? "formContactW__input"
+                : "formContact__input"
+            }
             placeholder="Email"
             name="userMail"
           />
-          <span className="formContact__valid"></span>
+          <span
+            className={
+              whatIsSL === "false" ? "formContact__valid" : "formContact__valid"
+            }
+          ></span>
         </div>
-        <div className="formContact__box">
-          <label htmlFor="sujet" className="formContact__label"></label>
+        <div
+          className={
+            whatIsSL === "false" ? "formContactW__box" : "formContact__box"
+          }
+        >
+          <label
+            htmlFor="sujet"
+            className={
+              whatIsSL === "false"
+                ? "formContactW__label"
+                : "formContact__label"
+            }
+          ></label>
           <input
             type="text"
             id="sujet"
-            className="formContact__input"
+            className={
+              whatIsSL === "false"
+                ? "formContactW__input"
+                : "formContact__input"
+            }
             placeholder="Sujet"
             name="userSujet"
           />
-          <span className="formContact__valid"></span>
+          <span
+            className={
+              whatIsSL === "false"
+                ? "formContactW__valid"
+                : "formContact__valid"
+            }
+          ></span>
         </div>
-        <div className="formContact__box">
-          <label htmlFor="message" className="formContact__label"></label>
+        <div
+          className={
+            whatIsSL === "false" ? "formContactW__box" : "formContact__box"
+          }
+        >
+          <label
+            htmlFor="message"
+            className={
+              whatIsSL === "false"
+                ? "formContactW__label"
+                : "formContact__label"
+            }
+          ></label>
           <textarea
             type="text"
             id="message"
-            className="formContact__textarea"
+            className={
+              whatIsSL === "false"
+                ? "formContactW__textarea"
+                : "formContact__textarea"
+            }
             placeholder="Votre message"
             name="userMessage"
           />
-          <span className="formContact__valid" id="formContact__valid"></span>
+          <span
+            className={
+              whatIsSL === "false"
+                ? "formContactW__valid"
+                : "formContact__valid"
+            }
+            id="formContact__valid"
+          ></span>
         </div>
-        <div className="formContact__div">
-          <button className="formContact__btn" onClick={emailSended}>
+        <div
+          className={
+            whatIsSL === "false" ? "formContactW__div" : "formContact__div"
+          }
+        >
+          <button
+            className={
+              whatIsSL === "false" ? "formContactW__btn" : "formContact__btn"
+            }
+            onClick={emailSended}
+          >
             Envoyer!
           </button>
-          <div className="formContact__divBtn"></div>
+          <div
+            className={
+              whatIsSL === "false"
+                ? "formContactW__divBtn"
+                : "formContact__divBtn"
+            }
+          ></div>
         </div>
       </form>
       {modale === true ? <ModaleMail /> : ""}

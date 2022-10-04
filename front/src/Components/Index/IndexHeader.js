@@ -4,12 +4,27 @@ import { HashLink } from "react-router-hash-link";
 import Tlogo from "../../Images/t-redBlue.png";
 
 export default function IndexHeader() {
+  // Light Mode
+  const whatIsSL = localStorage.getItem("DisplayMode : ");
+
   return (
     <>
       <div id="hello"></div>
-      <div className="index-divMaster">
-        <div className="index-header">
-          <h1 className="index-header__title">
+      <div
+        className={
+          whatIsSL === "false" ? "index-divMasterW" : "index-divMaster"
+        }
+      >
+        <div
+          className={whatIsSL === "false" ? "index-headerW" : "index-header"}
+        >
+          <h1
+            className={
+              whatIsSL === "false"
+                ? "index-headerW__title"
+                : "index-header__title"
+            }
+          >
             Hello, <br />
             Moi c'est{" "}
             <img
@@ -17,25 +32,75 @@ export default function IndexHeader() {
               alt="Logo"
               width="53"
               height="72"
-              className="index-header__img"
+              className={
+                whatIsSL === "false"
+                  ? "index-headerW__img"
+                  : "index-header__img"
+              }
             />
             homas.
             <br />
             Je suis Web Developer.{" "}
           </h1>
-          <p className="index-header__subtitle">Dev Front-End__</p>
-          <div className="index-header__box">
+          <p
+            className={
+              whatIsSL === "false"
+                ? "index-headerW__subtitle"
+                : "index-header__subtitle"
+            }
+          >
+            Dev Front-End__
+          </p>
+          <div
+            className={
+              whatIsSL === "false" ? "index-headerW__box" : "index-header__box"
+            }
+          >
             <HashLink smooth to="#contactMe">
-              <button className="index-header__btn">Contactez-moi</button>
+              <button
+                className={
+                  whatIsSL === "false"
+                    ? "index-headerW__btn"
+                    : "index-header__btn"
+                }
+              >
+                Contactez-moi
+              </button>
             </HashLink>
-            <div className="index-header__btnDiv"></div>
+            <div
+              className={
+                whatIsSL === "false"
+                  ? "index-headerW__btnDiv"
+                  : "index-header__btnDiv"
+              }
+            ></div>
           </div>
         </div>
-        <div className="index-divMaster__divScroll">
-          <span className="index-divMaster__scrollSign" id="scrollSignLeft">
+        <div
+          className={
+            whatIsSL === "false"
+              ? "index-divMasterW__divScroll"
+              : "index-divMaster__divScroll"
+          }
+        >
+          <span
+            className={
+              whatIsSL === "false"
+                ? "index-divMasterW__scrollSign"
+                : "index-divMaster__scrollSign"
+            }
+            id="scrollSignLeft"
+          >
             Scroll down →
           </span>
-          <span className="index-divMaster__scrollSign" id="scrollSignRight">
+          <span
+            className={
+              whatIsSL === "false"
+                ? "index-divMasterW__scrollSign"
+                : "index-divMaster__scrollSign"
+            }
+            id="scrollSignRight"
+          >
             Scroll down →
           </span>
         </div>

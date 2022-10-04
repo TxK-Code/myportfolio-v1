@@ -8,7 +8,7 @@ import LinkedinLogoHover from "../../Images/.svg/linkedin-in-brands_hover.svg";
 import GitHubLogo from "../../Images/.svg/github-square-brands.svg";
 import GitHubLogoHover from "../../Images/.svg/github-square-brands_hover.svg";
 
-import "../../index.scss";
+// import "../../index.scss";
 
 export default function Navbar() {
   const newLink = () => {
@@ -18,49 +18,147 @@ export default function Navbar() {
     window.open("https://github.com/TxK-Code");
   };
 
+  // Light Mode
+  const [displayMode, setDisplayMode] = useState(true);
+  const saveStateToLS = () => {
+    localStorage.setItem("DisplayMode : ", displayMode);
+  };
+  const saveDisplayMode = () => {
+    setDisplayMode(!displayMode);
+    saveStateToLS();
+    console.log(displayMode);
+  };
+  const whatIsSL = localStorage.getItem("DisplayMode : ");
+  if (whatIsSL === null) {
+    localStorage.setItem("DisplayMode : ", true);
+    setDisplayMode(true);
+  }
+
   return (
     <>
-      <div className="navbar">
-        <div className="navbar__headBox">
+      <div className={whatIsSL === "false" ? "navbarW" : "navbar"}>
+        <div
+          className={
+            whatIsSL === "false" ? "navbarW__headBox" : "navbar__headBox"
+          }
+        >
           <HashLink smooth to="#hello">
             <img
               src={TLogo}
               alt="Logo"
               width="53"
               height="72"
-              className="navbar__headBoxLogo"
+              className={
+                whatIsSL === "false"
+                  ? "navbarW__headBoxLogo"
+                  : "navbar__headBoxLogo"
+              }
             />
           </HashLink>
-          <span className="navbar__headBoxTitle">Thomas</span>
-          <span className="navbar__headBoxSubTitle">Web Developer</span>
+          <span
+            className={
+              whatIsSL === "false"
+                ? "navbarW__headBoxTitle"
+                : "navbar__headBoxTitle"
+            }
+          >
+            Thomas
+          </span>
+          <span
+            className={
+              whatIsSL === "false"
+                ? "navbarW__headBoxSubTitle"
+                : "navbar__headBoxSubTitle"
+            }
+          >
+            Web Developer
+          </span>
         </div>
-        <div className="navbar-body">
-          <ul className="navbar-body__ul">
-            <li className="navbar-body__li" id="li-One">
-              <HashLink smooth to="#hello">
+        <div className={whatIsSL === "false" ? "navbar-bodyW" : "navbar-body"}>
+          <ul
+            className={
+              whatIsSL === "false" ? "navbar-bodyW__ul" : "navbar-body__ul"
+            }
+          >
+            <li
+              className={
+                whatIsSL === "false" ? "navbar-bodyW__li" : "navbar-body__li"
+              }
+              id="li-One"
+            >
+              <HashLink
+                smooth
+                to="#hello"
+                className={
+                  whatIsSL === "false" ? "navbar-bodyW__li" : "navbar-body__li"
+                }
+              >
                 Hello
               </HashLink>
             </li>
-            <li className="navbar-body__li">
-              <HashLink smooth to="#myprojets">
+            <li
+              className={
+                whatIsSL === "false" ? "navbar-bodyW__li" : "navbar-body__li"
+              }
+            >
+              <HashLink
+                smooth
+                to="#myprojets"
+                className={
+                  whatIsSL === "false" ? "navbar-bodyW__li" : "navbar-body__li"
+                }
+              >
                 Projets
               </HashLink>
             </li>
-            <li className="navbar-body__li">
-              <HashLink smooth to="#skills">
+            <li
+              className={
+                whatIsSL === "false" ? "navbar-bodyW__li" : "navbar-body__li"
+              }
+            >
+              <HashLink
+                smooth
+                to="#skills"
+                className={
+                  whatIsSL === "false" ? "navbar-bodyW__li" : "navbar-body__li"
+                }
+              >
                 Skills
               </HashLink>
             </li>
-            <li className="navbar-body__li" id="li-Last">
-              <HashLink smooth to="#contactMe">
+            <li
+              className={
+                whatIsSL === "false" ? "navbar-bodyW__li" : "navbar-body__li"
+              }
+              id="li-Last"
+            >
+              <HashLink
+                smooth
+                to="#contactMe"
+                className={
+                  whatIsSL === "false" ? "navbar-bodyW__li" : "navbar-body__li"
+                }
+              >
                 Contact
               </HashLink>
             </li>
           </ul>
         </div>
-        <div className="navbar-footer">
-          <ul className="navbar-footer__ul">
-            <li className="navbar-footer__li">
+        <div
+          className={whatIsSL === "false" ? "navbar-footerW" : "navbar-footer"}
+        >
+          <ul
+            className={
+              whatIsSL === "false" ? "navbar-footerW__ul" : "navbar-footer__ul"
+            }
+          >
+            <li
+              className={
+                whatIsSL === "false"
+                  ? "navbar-footerW__li"
+                  : "navbar-footer__li"
+              }
+            >
               <img
                 src={GitHubLogo}
                 onMouseOver={(e) =>
@@ -71,10 +169,20 @@ export default function Navbar() {
                 alt="Lien Github"
                 height="25"
                 width="25"
-                className="navbar-footer__img"
+                className={
+                  whatIsSL === "false"
+                    ? "navbar-footerW__img"
+                    : "navbar-footer__img"
+                }
               />
             </li>
-            <li className="navbar-footer__li">
+            <li
+              className={
+                whatIsSL === "false"
+                  ? "navbar-footerW__li"
+                  : "navbar-footer__li"
+              }
+            >
               <img
                 src={LinkedinLogo}
                 onMouseOver={(e) =>
@@ -85,10 +193,24 @@ export default function Navbar() {
                 alt="Lien Linkedin"
                 height="25"
                 width="25"
-                className="navbar-footer__img"
+                className={
+                  whatIsSL === "false"
+                    ? "navbar-footerW__img"
+                    : "navbar-footer__img"
+                }
               />
             </li>
           </ul>
+          <button
+            className={
+              whatIsSL === "false"
+                ? "navbar-footerW__btnLight"
+                : "navbar-footer__btnLight"
+            }
+            onClick={saveDisplayMode}
+          >
+            {whatIsSL === "false" ? "Light Off" : "Light On"}
+          </button>
         </div>
       </div>
     </>
