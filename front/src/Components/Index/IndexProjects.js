@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { useSelector } from "react-redux";
 
 export default function IndexProjects() {
   const newTabTest = () => {
@@ -16,24 +17,23 @@ export default function IndexProjects() {
 
   // Light Mode
   const whatIsSL = localStorage.getItem("DisplayMode : ");
+  const isDark = useSelector((state) => state.modeSelected.value);
 
   return (
     <>
       <div
-        className={
-          whatIsSL === "false" ? "index-portfolioW" : "index-portfolio"
-        }
+        className={isDark === false ? "index-portfolioW" : "index-portfolio"}
       >
         <div
           className={
-            whatIsSL === "false"
+            isDark === false
               ? "index-portfolioHeaderW"
               : "index-portfolioHeader"
           }
         >
           <h1
             className={
-              whatIsSL === "false"
+              isDark === false
                 ? "index-portfolioHeaderW__title"
                 : "index-portfolioHeader__title"
             }
@@ -42,7 +42,7 @@ export default function IndexProjects() {
           </h1>
           <p
             className={
-              whatIsSL === "false"
+              isDark === false
                 ? "index-portfolioHeaderW__subtitle"
                 : "index-portfolioHeader__subtitle"
             }
@@ -53,33 +53,31 @@ export default function IndexProjects() {
         </div>
         <div
           className={
-            whatIsSL === "false"
-              ? "index-portfolioBodyW"
-              : "index-portfolioBody"
+            isDark === false ? "index-portfolioBodyW" : "index-portfolioBody"
           }
         >
           <div
             className={
-              whatIsSL === "false"
+              isDark === false
                 ? "index-portfolioBodyW__projets"
                 : "index-portfolioBody__projets"
             }
           >
             <div
-              className={whatIsSL === "false" ? "btnProjektW" : "btnProjekt"}
+              className={isDark === false ? "btnProjektW" : "btnProjekt"}
               id="firstBtnPrj"
               onClick={newTabTest}
             >
               <button
                 className={
-                  whatIsSL === "false" ? "btnProjektW__btn" : "btnProjekt__btn"
+                  isDark === false ? "btnProjektW__btn" : "btnProjekt__btn"
                 }
               >
                 Test Technique WCS
               </button>
               <div
                 className={
-                  whatIsSL === "false"
+                  isDark === false
                     ? "btnProjektW__btnDiv"
                     : "btnProjekt__btnDiv"
                 }
@@ -87,19 +85,19 @@ export default function IndexProjects() {
             </div>
 
             <div
-              className={whatIsSL === "false" ? "btnProjektW" : "btnProjekt"}
+              className={isDark === false ? "btnProjektW" : "btnProjekt"}
               onClick={newTabPizza}
             >
               <button
                 className={
-                  whatIsSL === "false" ? "btnProjektW__btn" : "btnProjekt__btn"
+                  isDark === false ? "btnProjektW__btn" : "btnProjekt__btn"
                 }
               >
                 Pizzeria
               </button>
               <div
                 className={
-                  whatIsSL === "false"
+                  isDark === false
                     ? "btnProjektW__btnDiv"
                     : "btnProjekt__btnDiv"
                 }
@@ -107,19 +105,19 @@ export default function IndexProjects() {
             </div>
 
             <div
-              className={whatIsSL === "false" ? "btnProjektW" : "btnProjekt"}
+              className={isDark === false ? "btnProjektW" : "btnProjekt"}
               onClick={newTabMtg}
             >
               <button
                 className={
-                  whatIsSL === "false" ? "btnProjektW__btn" : "btnProjekt__btn"
+                  isDark === false ? "btnProjektW__btn" : "btnProjekt__btn"
                 }
               >
                 Card Manager
               </button>
               <div
                 className={
-                  whatIsSL === "false"
+                  isDark === false
                     ? "btnProjektW__btnDiv"
                     : "btnProjekt__btnDiv"
                 }
@@ -127,19 +125,19 @@ export default function IndexProjects() {
             </div>
 
             <div
-              className={whatIsSL === "false" ? "btnProjektW" : "btnProjekt"}
+              className={isDark === false ? "btnProjektW" : "btnProjekt"}
               onClick={newTabOC}
             >
               <button
                 className={
-                  whatIsSL === "false" ? "btnProjektW__btn" : "btnProjekt__btn"
+                  isDark === false ? "btnProjektW__btn" : "btnProjekt__btn"
                 }
               >
                 Projet Final OpenClassrooms
               </button>
               <div
                 className={
-                  whatIsSL === "false"
+                  isDark === false
                     ? "btnProjektW__btnDiv"
                     : "btnProjekt__btnDiv"
                 }

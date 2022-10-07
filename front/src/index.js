@@ -5,18 +5,19 @@ import App from "./App";
 
 // redux
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware, combineReducers } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import thunk from "redux-thunk";
+import { configureStore } from "@reduxjs/toolkit";
+// import store from "./redux/store";
 
-const rootReducer = combineReducers({
-  // usersReducer,
+import changeModel from "./redux/articles/modeSlice";
+
+const Store = configureStore({
+  reducer: {
+    modeSelected: changeModel,
+  },
 });
 
-const store = createStore(composeWithDevTools(applyMiddleware(thunk)));
-
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={Store}>
     <App />
   </Provider>,
   document.getElementById("root")

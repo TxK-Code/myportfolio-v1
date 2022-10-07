@@ -223,6 +223,29 @@ $fontRed: #fd2155;
     justify-content: space-between;
     width: 9%;
   }
+  &__SecBtn {
+    margin-top: -2rem;
+    border: #05fdd8 solid 1px;
+    padding: 10px;
+    background: #252422;
+    color: #05fdd8;
+    font-family: "Inter", sans-serif;
+    position: absolute;
+    left: 39%;
+    border-radius: 15px;
+    display: none;
+    @media screen and (max-width: 415px) {
+      display: block;
+    }
+    &:hover {
+      background: darken(#252422, 10%);
+      cursor: pointer;
+    }
+    &:active {
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
+  }
 }
 
 #scrollSignLeftW {

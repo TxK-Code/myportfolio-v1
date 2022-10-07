@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { useSelector } from "react-redux";
 import emailjs from "@emailjs/browser";
 
 import ModaleMail from "../Modales/ModaleMail";
@@ -41,125 +42,110 @@ export default function ContactForm() {
 
   // Light Mode
   const whatIsSL = localStorage.getItem("DisplayMode : ");
+  const isDark = useSelector((state) => state.modeSelected.value);
 
   return (
     <>
       <form
         ref={form}
         action=""
-        className={whatIsSL === "false" ? "formContactW" : "formContact"}
+        className={isDark === false ? "formContactW" : "formContact"}
         onSubmit={sendMail}
       >
         <div
           className={
-            whatIsSL === "false" ? "formContactW__box" : "formContact__box"
+            isDark === false ? "formContactW__box" : "formContact__box"
           }
         >
           <label
             htmlFor="nom"
             className={
-              whatIsSL === "false"
-                ? "formContactW__label"
-                : "formContact__label"
+              isDark === false ? "formContactW__label" : "formContact__label"
             }
           ></label>
           <input
             type="text"
             id="nom"
             className={
-              whatIsSL === "false"
-                ? "formContactW__input"
-                : "formContact__input"
+              isDark === false ? "formContactW__input" : "formContact__input"
             }
             placeholder="Nom"
             name="userName"
           />
           <span
             className={
-              whatIsSL === "false" ? "formContact__valid" : "formContact__valid"
+              isDark === false ? "formContactW__valid" : "formContact__valid"
             }
           ></span>
         </div>
         <div
           className={
-            whatIsSL === "false" ? "formContactW__box" : "formContact__box"
+            isDark === false ? "formContactW__box" : "formContact__box"
           }
         >
           <label
             htmlFor="eMail"
             className={
-              whatIsSL === "false"
-                ? "formContactW__label"
-                : "formContact__label"
+              isDark === false ? "formContactW__label" : "formContact__label"
             }
           ></label>
           <input
             type="text"
             id="eMail"
             className={
-              whatIsSL === "false"
-                ? "formContactW__input"
-                : "formContact__input"
+              isDark === false ? "formContactW__input" : "formContact__input"
             }
             placeholder="Email"
             name="userMail"
           />
           <span
             className={
-              whatIsSL === "false" ? "formContact__valid" : "formContact__valid"
+              isDark === false ? "formContactW__valid" : "formContact__valid"
             }
           ></span>
         </div>
         <div
           className={
-            whatIsSL === "false" ? "formContactW__box" : "formContact__box"
+            isDark === false ? "formContactW__box" : "formContact__box"
           }
         >
           <label
             htmlFor="sujet"
             className={
-              whatIsSL === "false"
-                ? "formContactW__label"
-                : "formContact__label"
+              isDark === false ? "formContactW__label" : "formContact__label"
             }
           ></label>
           <input
             type="text"
             id="sujet"
             className={
-              whatIsSL === "false"
-                ? "formContactW__input"
-                : "formContact__input"
+              isDark === false ? "formContactW__input" : "formContact__input"
             }
             placeholder="Sujet"
             name="userSujet"
           />
           <span
             className={
-              whatIsSL === "false"
-                ? "formContactW__valid"
-                : "formContact__valid"
+              isDark === false ? "formContactW__valid" : "formContact__valid"
             }
           ></span>
         </div>
         <div
           className={
-            whatIsSL === "false" ? "formContactW__box" : "formContact__box"
+            isDark === false ? "formContactW__box" : "formContact__box"
           }
         >
           <label
             htmlFor="message"
             className={
-              whatIsSL === "false"
-                ? "formContactW__label"
-                : "formContact__label"
+              isDark === false ? "formContactW__label" : "formContact__label"
             }
           ></label>
           <textarea
             type="text"
             id="message"
             className={
-              whatIsSL === "false"
+              isDark === false
                 ? "formContactW__textarea"
                 : "formContact__textarea"
             }
@@ -168,21 +154,19 @@ export default function ContactForm() {
           />
           <span
             className={
-              whatIsSL === "false"
-                ? "formContactW__valid"
-                : "formContact__valid"
+              isDark === false ? "formContactW__valid" : "formContact__valid"
             }
             id="formContact__valid"
           ></span>
         </div>
         <div
           className={
-            whatIsSL === "false" ? "formContactW__div" : "formContact__div"
+            isDark === false ? "formContactW__div" : "formContact__div"
           }
         >
           <button
             className={
-              whatIsSL === "false" ? "formContactW__btn" : "formContact__btn"
+              isDark === false ? "formContactW__btn" : "formContact__btn"
             }
             onClick={emailSended}
           >
@@ -190,9 +174,7 @@ export default function ContactForm() {
           </button>
           <div
             className={
-              whatIsSL === "false"
-                ? "formContactW__divBtn"
-                : "formContact__divBtn"
+              isDark === false ? "formContactW__divBtn" : "formContact__divBtn"
             }
           ></div>
         </div>

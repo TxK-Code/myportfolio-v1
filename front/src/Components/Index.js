@@ -10,6 +10,7 @@ import FormContact from "../Components/Formulaire/ContactForm";
 
 export default function Index() {
   // Light Mode
+  const isDark = useSelector((state) => state.modeSelected.value);
   const whatIsSL = localStorage.getItem("DisplayMode : ");
 
   return (
@@ -17,19 +18,17 @@ export default function Index() {
       <IndexHeader />
       <IndexProjects />
       <Indexmyself />
-      <div
-        className={whatIsSL === "false" ? "index-contactW" : "index-contact"}
-      >
+      <div className={isDark === false ? "index-contactW" : "index-contact"}>
         <div
           className={
-            whatIsSL === "false"
+            isDark === false
               ? "index-contactW__header"
               : "index-contact__header"
           }
         >
           <h1
             className={
-              whatIsSL === "false"
+              isDark === false
                 ? "index-contactW__headertitle"
                 : "index-contact__headertitle"
             }
@@ -38,7 +37,7 @@ export default function Index() {
           </h1>
           <p
             className={
-              whatIsSL === "false"
+              isDark === false
                 ? "index-contactW__headersubtitle"
                 : "index-contact__headersubtitle"
             }

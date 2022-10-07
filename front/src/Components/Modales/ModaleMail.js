@@ -1,27 +1,26 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 export default function ModaleMail() {
   // Light Mode
-  const whatIsSL = localStorage.getItem("DisplayMode : ");
+  const isDark = useSelector((state) => state.modeSelected.value);
 
   return (
     <>
-      <div className={whatIsSL === "false" ? "modaleMailW" : "modaleMail"}>
+      <div className={isDark === false ? "modaleMailW" : "modaleMail"}>
         <div
-          className={
-            whatIsSL === "false" ? "modaleMailW__box" : "modaleMail__box"
-          }
+          className={isDark === false ? "modaleMailW__box" : "modaleMail__box"}
         >
           <h2
             className={
-              whatIsSL === "false" ? "modaleMailW__title" : "modaleMail__title"
+              isDark === false ? "modaleMailW__title" : "modaleMail__title"
             }
           >
             Message Envoyé
           </h2>
           <div
             className={
-              whatIsSL === "false" ? "modaleMailW__div" : "modaleMail__div"
+              isDark === false ? "modaleMailW__div" : "modaleMail__div"
             }
           ></div>
         </div>

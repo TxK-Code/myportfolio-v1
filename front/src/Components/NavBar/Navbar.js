@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { HashLink } from "react-router-hash-link";
 
 //Images
@@ -8,9 +9,17 @@ import LinkedinLogoHover from "../../Images/.svg/linkedin-in-brands_hover.svg";
 import GitHubLogo from "../../Images/.svg/github-square-brands.svg";
 import GitHubLogoHover from "../../Images/.svg/github-square-brands_hover.svg";
 
-// import "../../index.scss";
+import LinkedinLogoHoverP from "../../Images/.svg/Pink/linkedin-in-brands_hover.svg";
+import GitHubLogoHoverP from "../../Images/.svg/Pink/github-square-brands_hover.svg";
+
+import { changeMode } from "../../redux/articles/modeSlice";
 
 export default function Navbar() {
+  const isDark = useSelector((state) => state.modeSelected.value);
+  const dispatch = useDispatch();
+
+  console.log(isDark, "IsDark");
+
   const newLink = () => {
     window.open("https://www.linkedin.com/in/thomas-maugendre-5a04ab209/");
   };
@@ -19,28 +28,35 @@ export default function Navbar() {
   };
 
   // Light Mode
-  const [displayMode, setDisplayMode] = useState(true);
-  const saveStateToLS = () => {
-    localStorage.setItem("DisplayMode : ", displayMode);
+
+  // State
+  const [displayMode, setDisplayMode] = useState(false);
+  console.log(displayMode, "DisplayDark");
+  // Save LS
+  const saveStateToLS = (e) => {
+    localStorage.setItem("DisplayMode : ", e);
   };
-  const saveDisplayMode = () => {
-    setDisplayMode(!displayMode);
-    saveStateToLS();
-    console.log(displayMode);
-  };
+  // Get LS
   const whatIsSL = localStorage.getItem("DisplayMode : ");
-  if (whatIsSL === null) {
-    localStorage.setItem("DisplayMode : ", true);
-    setDisplayMode(true);
+  if (whatIsSL !== null || whatIsSL !== "undefined") {
   }
+  // Set LS if null
+  if (whatIsSL === null || whatIsSL === "undefined") {
+    localStorage.setItem("DisplayMode : ", false);
+  }
+
+  const saveDisplayMode = () => {
+    // dispatch(changeMode());
+    setDisplayMode(!displayMode);
+    saveStateToLS(!displayMode);
+    dispatch(changeMode());
+  };
 
   return (
     <>
-      <div className={whatIsSL === "false" ? "navbarW" : "navbar"}>
+      <div className={isDark === false ? "navbarW" : "navbar"}>
         <div
-          className={
-            whatIsSL === "false" ? "navbarW__headBox" : "navbar__headBox"
-          }
+          className={isDark === false ? "navbarW__headBox" : "navbar__headBox"}
         >
           <HashLink smooth to="#hello">
             <img
@@ -49,7 +65,7 @@ export default function Navbar() {
               width="53"
               height="72"
               className={
-                whatIsSL === "false"
+                isDark === false
                   ? "navbarW__headBoxLogo"
                   : "navbar__headBoxLogo"
               }
@@ -57,7 +73,7 @@ export default function Navbar() {
           </HashLink>
           <span
             className={
-              whatIsSL === "false"
+              isDark === false
                 ? "navbarW__headBoxTitle"
                 : "navbar__headBoxTitle"
             }
@@ -66,7 +82,7 @@ export default function Navbar() {
           </span>
           <span
             className={
-              whatIsSL === "false"
+              isDark === false
                 ? "navbarW__headBoxSubTitle"
                 : "navbar__headBoxSubTitle"
             }
@@ -74,15 +90,15 @@ export default function Navbar() {
             Web Developer
           </span>
         </div>
-        <div className={whatIsSL === "false" ? "navbar-bodyW" : "navbar-body"}>
+        <div className={isDark === false ? "navbar-bodyW" : "navbar-body"}>
           <ul
             className={
-              whatIsSL === "false" ? "navbar-bodyW__ul" : "navbar-body__ul"
+              isDark === false ? "navbar-bodyW__ul" : "navbar-body__ul"
             }
           >
             <li
               className={
-                whatIsSL === "false" ? "navbar-bodyW__li" : "navbar-body__li"
+                isDark === false ? "navbar-bodyW__li" : "navbar-body__li"
               }
               id="li-One"
             >
@@ -90,7 +106,7 @@ export default function Navbar() {
                 smooth
                 to="#hello"
                 className={
-                  whatIsSL === "false" ? "navbar-bodyW__li" : "navbar-body__li"
+                  isDark === false ? "navbar-bodyW__li" : "navbar-body__li"
                 }
               >
                 Hello
@@ -98,14 +114,14 @@ export default function Navbar() {
             </li>
             <li
               className={
-                whatIsSL === "false" ? "navbar-bodyW__li" : "navbar-body__li"
+                isDark === false ? "navbar-bodyW__li" : "navbar-body__li"
               }
             >
               <HashLink
                 smooth
                 to="#myprojets"
                 className={
-                  whatIsSL === "false" ? "navbar-bodyW__li" : "navbar-body__li"
+                  isDark === false ? "navbar-bodyW__li" : "navbar-body__li"
                 }
               >
                 Projets
@@ -113,14 +129,14 @@ export default function Navbar() {
             </li>
             <li
               className={
-                whatIsSL === "false" ? "navbar-bodyW__li" : "navbar-body__li"
+                isDark === false ? "navbar-bodyW__li" : "navbar-body__li"
               }
             >
               <HashLink
                 smooth
                 to="#skills"
                 className={
-                  whatIsSL === "false" ? "navbar-bodyW__li" : "navbar-body__li"
+                  isDark === false ? "navbar-bodyW__li" : "navbar-body__li"
                 }
               >
                 Skills
@@ -128,7 +144,7 @@ export default function Navbar() {
             </li>
             <li
               className={
-                whatIsSL === "false" ? "navbar-bodyW__li" : "navbar-body__li"
+                isDark === false ? "navbar-bodyW__li" : "navbar-body__li"
               }
               id="li-Last"
             >
@@ -136,7 +152,7 @@ export default function Navbar() {
                 smooth
                 to="#contactMe"
                 className={
-                  whatIsSL === "false" ? "navbar-bodyW__li" : "navbar-body__li"
+                  isDark === false ? "navbar-bodyW__li" : "navbar-body__li"
                 }
               >
                 Contact
@@ -144,72 +160,104 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-        <div
-          className={whatIsSL === "false" ? "navbar-footerW" : "navbar-footer"}
-        >
+        <div className={isDark === false ? "navbar-footerW" : "navbar-footer"}>
           <ul
             className={
-              whatIsSL === "false" ? "navbar-footerW__ul" : "navbar-footer__ul"
+              isDark === false ? "navbar-footerW__ul" : "navbar-footer__ul"
             }
           >
             <li
               className={
-                whatIsSL === "false"
-                  ? "navbar-footerW__li"
-                  : "navbar-footer__li"
+                isDark === false ? "navbar-footerW__li" : "navbar-footer__li"
               }
             >
-              <img
-                src={GitHubLogo}
-                onMouseOver={(e) =>
-                  (e.currentTarget.src = `${GitHubLogoHover}`)
-                }
-                onMouseOut={(e) => (e.currentTarget.src = `${GitHubLogo}`)}
-                onClick={newGit}
-                alt="Lien Github"
-                height="25"
-                width="25"
-                className={
-                  whatIsSL === "false"
-                    ? "navbar-footerW__img"
-                    : "navbar-footer__img"
-                }
-              />
+              {isDark === false ? (
+                <img
+                  src={GitHubLogo}
+                  onMouseOver={(e) =>
+                    (e.currentTarget.src = `${GitHubLogoHoverP}`)
+                  }
+                  onMouseOut={(e) => (e.currentTarget.src = `${GitHubLogo}`)}
+                  onClick={newGit}
+                  alt="Lien Github"
+                  height="25"
+                  width="25"
+                  className={
+                    isDark === false
+                      ? "navbar-footerW__img"
+                      : "navbar-footer__img"
+                  }
+                />
+              ) : (
+                <img
+                  src={GitHubLogo}
+                  onMouseOver={(e) =>
+                    (e.currentTarget.src = `${GitHubLogoHover}`)
+                  }
+                  onMouseOut={(e) => (e.currentTarget.src = `${GitHubLogo}`)}
+                  onClick={newGit}
+                  alt="Lien Github"
+                  height="25"
+                  width="25"
+                  className={
+                    isDark === false
+                      ? "navbar-footerW__img"
+                      : "navbar-footer__img"
+                  }
+                />
+              )}
             </li>
             <li
               className={
-                whatIsSL === "false"
-                  ? "navbar-footerW__li"
-                  : "navbar-footer__li"
+                isDark === false ? "navbar-footerW__li" : "navbar-footer__li"
               }
             >
-              <img
-                src={LinkedinLogo}
-                onMouseOver={(e) =>
-                  (e.currentTarget.src = `${LinkedinLogoHover}`)
-                }
-                onMouseOut={(e) => (e.currentTarget.src = `${LinkedinLogo}`)}
-                onClick={newLink}
-                alt="Lien Linkedin"
-                height="25"
-                width="25"
-                className={
-                  whatIsSL === "false"
-                    ? "navbar-footerW__img"
-                    : "navbar-footer__img"
-                }
-              />
+              {isDark === false ? (
+                <img
+                  src={LinkedinLogo}
+                  onMouseOver={(e) =>
+                    (e.currentTarget.src = `${LinkedinLogoHoverP}`)
+                  }
+                  onMouseOut={(e) => (e.currentTarget.src = `${LinkedinLogo}`)}
+                  onClick={newLink}
+                  alt="Lien Linkedin"
+                  height="25"
+                  width="25"
+                  className={
+                    isDark === false
+                      ? "navbar-footerW__img"
+                      : "navbar-footer__img"
+                  }
+                />
+              ) : (
+                <img
+                  src={LinkedinLogo}
+                  onMouseOver={(e) =>
+                    (e.currentTarget.src = `${LinkedinLogoHover}`)
+                  }
+                  onMouseOut={(e) => (e.currentTarget.src = `${LinkedinLogo}`)}
+                  onClick={newLink}
+                  alt="Lien Linkedin"
+                  height="25"
+                  width="25"
+                  className={
+                    isDark === false
+                      ? "navbar-footerW__img"
+                      : "navbar-footer__img"
+                  }
+                />
+              )}
             </li>
           </ul>
           <button
             className={
-              whatIsSL === "false"
+              isDark === false
                 ? "navbar-footerW__btnLight"
                 : "navbar-footer__btnLight"
             }
             onClick={saveDisplayMode}
           >
-            {whatIsSL === "false" ? "Light Off" : "Light On"}
+            {isDark === false ? "Light Off" : "Light On"}
           </button>
         </div>
       </div>

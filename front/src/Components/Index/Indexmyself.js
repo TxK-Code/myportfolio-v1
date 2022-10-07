@@ -1,32 +1,40 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
+//clear
 import JsLogo from "../../Images/.svg/js-square-brands.svg";
 import SassLogo from "../../Images/.svg/sass-brands.svg";
 import ReactLogo from "../../Images/.svg/react-brands.svg";
 import HtmlLogo from "../../Images/.svg/html5-brands.svg";
 import mySqlLogo from "../../Images/.svg/mySql.svg";
 
+//pink
+import JsLogoP from "../../Images/.svg/Pink/js-square-brands.svg";
+import SassLogoP from "../../Images/.svg/Pink/sass-brands.svg";
+import ReactLogoP from "../../Images/.svg/Pink/react-brands.svg";
+import HtmlLogoP from "../../Images/.svg/Pink/html5-brands.svg";
+import mySqlLogoP from "../../Images/.svg/Pink/mySql.svg";
+
 export default function Indexmyself() {
   // Light Mode
   const whatIsSL = localStorage.getItem("DisplayMode : ");
+  const isDark = useSelector((state) => state.modeSelected.value);
 
   return (
     <>
       <div id="skills"></div>
 
-      <div className={whatIsSL === "false" ? "index-myselfW" : "index-myself"}>
+      <div className={isDark === false ? "index-myselfW" : "index-myself"}>
         <h1
           className={
-            whatIsSL === "false"
-              ? "index-myselfW__title"
-              : "index-myself__title"
+            isDark === false ? "index-myselfW__title" : "index-myself__title"
           }
         >
           Viens on parle de moi
         </h1>
         <p
           className={
-            whatIsSL === "false"
+            isDark === false
               ? "index-myselfW__subtitle"
               : "index-myself__subtitle"
           }
@@ -37,7 +45,7 @@ export default function Indexmyself() {
         </p>
         <p
           className={
-            whatIsSL === "false"
+            isDark === false
               ? "index-myselfW__subtitle"
               : "index-myself__subtitle"
           }
@@ -52,7 +60,7 @@ export default function Indexmyself() {
         </p>
         <p
           className={
-            whatIsSL === "false"
+            isDark === false
               ? "index-myselfW__subtitle"
               : "index-myself__subtitle"
           }
@@ -61,77 +69,69 @@ export default function Indexmyself() {
         </p>
         <div
           className={
-            whatIsSL === "false"
+            isDark === false
               ? "index-myselfW__boxTechnos"
               : "index-myself__boxTechnos"
           }
         >
           <img
-            src={HtmlLogo}
+            src={isDark === false ? HtmlLogoP : HtmlLogo}
             alt="Logo HTML5"
             width="100px"
             height="100px"
             className={
-              whatIsSL === "false"
+              isDark === false
                 ? "index-myselfW__boxTechnos"
                 : "index-myself__boxTechnos"
             }
           />
           <img
-            src={SassLogo}
+            src={isDark === false ? SassLogoP : SassLogo}
             alt="Logo Sass"
             width="100px"
             height="100px"
             className={
-              whatIsSL
-                ? "index-myselfW__boxTechnos"
-                : "index-myself__boxTechnos"
+              isDark ? "index-myselfW__boxTechnos" : "index-myself__boxTechnos"
             }
           />
           <img
-            src={JsLogo}
+            src={isDark === false ? JsLogoP : JsLogo}
             alt="Logo JavaScript"
             width="100px"
             height="100px"
             className={
-              whatIsSL
-                ? "index-myselfW__boxTechnos"
-                : "index-myself__boxTechnos"
+              isDark ? "index-myselfW__boxTechnos" : "index-myself__boxTechnos"
             }
           />
           <img
-            src={ReactLogo}
+            src={isDark === false ? ReactLogoP : ReactLogo}
             alt="Logo React"
             width="100px"
             height="100px"
             className={
-              whatIsSL
-                ? "index-myselfW__boxTechnos"
-                : "index-myself__boxTechnos"
+              isDark ? "index-myselfW__boxTechnos" : "index-myself__boxTechnos"
             }
           />
           <img
-            src={mySqlLogo}
+            src={isDark === false ? mySqlLogoP : mySqlLogo}
             alt="Logo React"
             width="100px"
             height="100px"
             className={
-              whatIsSL
-                ? "index-myselfW__boxTechnos"
-                : "index-myself__boxTechnos"
+              isDark ? "index-myselfW__boxTechnos" : "index-myself__boxTechnos"
             }
           />
         </div>
         <div
           className={
-            whatIsSL === "false"
+            isDark === false
               ? "index-divMyselfW__divScroll"
               : "index-divMyself__divScroll"
           }
         >
           <span
             className={
-              whatIsSL === "false"
+              isDark === false
                 ? "index-divMyselfW__scrollSign"
                 : "index-divMyself__scrollSign"
             }
@@ -141,7 +141,7 @@ export default function Indexmyself() {
           </span>
           <span
             className={
-              whatIsSL === "false"
+              isDark === false
                 ? "index-divMyselfW__scrollSign"
                 : "index-divMyself__scrollSign"
             }
